@@ -1,6 +1,7 @@
 # DeepRULbib
 
-A Bibtex bibliography including publications related to, or of relevance in, the field of Predictive Maintenance with Deep Learning. 
+This bibliography comprises publications related to (or of relevance in) the field of predictive maintenance using Machine Learning and specifically deep Neural Networks.
+Predictive Maintenance is one of the maintenance policies, which metrics such as Remaining Useful Life and Time to Failure Estimation are prediction targets.
 
 # Structure of this bibliography
 

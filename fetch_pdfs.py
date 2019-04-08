@@ -23,6 +23,7 @@ import sys
 import errno
 import urllib2
 import urllib
+import requests
 import pybtex.database.input.bibtex as bibtex
 
 
@@ -36,14 +37,16 @@ def download_pdf(url, file_name):
         url = urllib2.quote(url, ":/=?&")
         print "Now fetching %s" % url
         req = urllib2.Request(url)
-        req.add_header('User-agent', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0')
         fetched_file = urllib2.urlopen(req)
+
     except Exception as err:
         print >> sys.stderr, err
         return
 
-    with open(file_name, "w") as fd:
+    with open(file_name, "wb") as fd:
         fd.write(fetched_file.read())
+        fd.close()
+        print("Completed download for ", file_name)
 
 
 def main(file_name, output_dir):
